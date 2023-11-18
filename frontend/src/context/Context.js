@@ -6,12 +6,13 @@ export const Context = createContext();
 
 const ENV = process.env.REACT_APP_ENV;
 const HOST =
-  ENV ===
-    ('DOCKER'
-      ? process.env.REACT_APP_HOSTDOCKER
-      : process.env.REACT_APP_HOSTLOCAL) || '127.0.0.1';
+  ENV === 'DOCKER'
+    ? process.env.REACT_APP_HOSTDOCKER
+    : process.env.REACT_APP_HOSTLOCAL || '127.0.0.1';
 const PORT = process.env.REACT_APP_PORT || '5000';
+console.log(HOST, PORT);
 const baseUrl = `http://${HOST}:${PORT}/api/`;
+console.log(baseUrl);
 
 const ContextProvider = ({ children }) => {
   let localUser = localStorage.getItem('user');
