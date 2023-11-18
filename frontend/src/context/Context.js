@@ -4,16 +4,13 @@ import axios from 'axios';
 
 export const Context = createContext();
 
-// const ENV = process.env.REACT_APP_ENV;
-// const HOST =
-//   ENV === 'DOCKER'
-//     ? process.env.REACT_APP_HOSTDOCKER
-//     : process.env.REACT_APP_HOSTLOCAL || '127.0.0.1';
-// const PORT = process.env.REACT_APP_PORT || '5000';
-// console.log(HOST, PORT);
-// const baseUrl = `http://${HOST}:${PORT}/api/`;
-const baseUrl =
-  `${process.env.REACT_APP_BACKEND}/api/` || 'http://127.0.0.1:5000/api/';
+const ENV = process.env.REACT_APP_ENV;
+const BACKEND =
+  ENV === 'DOCKER'
+    ? process.env.REACT_APP_BACKEND_DOCKER
+    : process.env.REACT_APP_BACKEND_LOCAL || 'http://127.0.0.1:5000';
+
+const baseUrl = `${BACKEND}/api/`;
 console.log(baseUrl);
 
 const ContextProvider = ({ children }) => {
