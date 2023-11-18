@@ -1,0 +1,20 @@
+.completed {
+  text-decoration: line-through;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.done-icon:hover {
+  color: green;
+}
+
+.undone-icon:hover {
+  color: orange;
+}
+
+.trash-icon:hover {
+  color: red;
+}
