@@ -43,7 +43,7 @@ Make sure you have the following installed:
    # Install frontend dependencies
    cd frontend
    npm install
-   
+
    # Install backend dependencies
    cd ../backend
    npm install
@@ -58,8 +58,6 @@ Make sure you have the following installed:
    - open `backend/config/db.js`
    - update the MongoDB connection string
    - change ENV value as `ENV = LOCAL`
-
-   
 
 ## Project Structure
 
@@ -143,4 +141,4 @@ Feel free to contribute to the project by opening issues or submitting pull requ
 
 ## License
 
-This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
+This project is licensed under the [MIT License](https://mit-license.org/).
