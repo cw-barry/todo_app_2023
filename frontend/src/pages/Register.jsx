@@ -1,8 +1,7 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Context } from '../context/Context';
-import { toast } from 'react-toastify';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
