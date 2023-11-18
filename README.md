@@ -1,6 +1,5 @@
 # Todo CRUD App
 
-<<<<<<< HEAD
 This project is a full-stack Todo CRUD (Create, Read, Update, Delete) application built using React.js for the frontend, Node.js with Express for the backend, and MongoDB as the database. Additionally, it includes Dockerization using Docker and Docker Compose.
 
 ## Table of Contents
@@ -145,9 +144,3 @@ Feel free to contribute to the project by opening issues or submitting pull requ
 ## License
 
 This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
-=======
-### Frontend runs on port 3000
-### Backend runs on port 5000
-
-#### To run without docker in backend config/.env change ENV value as `ENV = LOCAL` 
->>>>>>> 45aae04559b04efc70b288996ea7519d8be6b986
