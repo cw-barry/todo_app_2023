@@ -55,9 +55,18 @@ Make sure you have the following installed:
 
    In order to use it locally:
 
-   - open `backend/config/db.js`
+   - open `backend/config/.env`
    - update the MongoDB connection string
    - change ENV value as `ENV = LOCAL`
+
+4. Frontend ENV configuration:
+
+   Currently `frontend/.env` adjusted as to be used in Docker.
+
+   In order to use it locally:
+
+   - open `fronend/.env`
+   - change ENV value as `REACT_APP_ENV = LOCAL`
 
 ## Project Structure
 
