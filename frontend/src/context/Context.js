@@ -6,9 +6,9 @@ export const Context = createContext();
 
 const ENV = process.env.REACT_APP_ENV;
 const BACKEND =
-  ENV === 'DOCKER'
-    ? process.env.REACT_APP_BACKEND_DOCKER
-    : process.env.REACT_APP_BACKEND_LOCAL || 'http://127.0.0.1:5000';
+  ENV === 'AWS'
+    ? process.env.REACT_APP_BACKEND_AWS
+    : process.env.REACT_APP_BACKEND || 'http://127.0.0.1:5000';
 
 const baseUrl = `${BACKEND}/api/`;
 console.log(baseUrl);
