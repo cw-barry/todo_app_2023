@@ -3,7 +3,13 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 
 export const Context = createContext();
-const HOST = process.env.REACT_APP_HOST || '127.0.0.1';
+
+const ENV = process.env.REACT_APP_ENV;
+const HOST =
+  ENV ===
+    ('DOCKER'
+      ? process.env.REACT_APP_HOSTDOCKER
+      : process.env.REACT_APP_HOSTLOCAL) || '127.0.0.1';
 const PORT = process.env.REACT_APP_PORT || '5000';
 const baseUrl = `http://${HOST}:${PORT}/api/`;
 
