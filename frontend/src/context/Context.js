@@ -40,6 +40,7 @@ const ContextProvider = ({ children }) => {
 
   const loginUser = async (userData, navigate) => {
     try {
+      console.log(userData);
       const res = await axios({
         method: 'post',
         url: `${baseUrl}auth/login/`,

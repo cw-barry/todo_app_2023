@@ -1,28 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Context } from '../context/Context';
-import { toast } from 'react-toastify';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const Login = () => {
   const { loginUser } = useContext(Context);
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.email) toast.warning('Email is required');
-    if (!formData.password) toast.warning('Password is required');
-    if (formData.email && formData.password) loginUser(formData, navigate);
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: Yup.object({
+      email: Yup.string().email('Invalid email address').required('Required'),
+      password: Yup.string().required('Required'),
+    }),
+    onSubmit: async (values, { resetForm }) => {
+      await loginUser(values, navigate);
+      resetForm();
+    },
+  });
 
   return (
     <div className="d-flex col-12">
@@ -36,7 +36,7 @@ const Login = () => {
       <Form
         className="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center"
         style={{ height: '100vh' }}
-        onSubmit={handleSubmit}
+        onSubmit={formik.handleSubmit}
       >
         <p className="fs-2">Login Page</p>
         <FormGroup style={{ width: '18rem' }}>
@@ -45,9 +45,13 @@ const Login = () => {
             type="email"
             name="email"
             id="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {formik.touched.email && formik.errors.email && (
+            <div className="text-danger">{formik.errors.email}</div>
+          )}
         </FormGroup>
         <FormGroup style={{ width: '18rem' }}>
           <Label for="password">Enter Your Password</Label>
@@ -55,11 +59,15 @@ const Login = () => {
             type="password"
             name="password"
             id="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
+          {formik.touched.password && formik.errors.password && (
+            <div className="text-danger">{formik.errors.password}</div>
+          )}
         </FormGroup>
-        <Button color="secondary" style={{ width: '18rem' }}>
+        <Button color="secondary" style={{ width: '18rem' }} type="submit">
           Log in
         </Button>
 
