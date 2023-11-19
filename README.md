@@ -20,7 +20,7 @@ This project is a full-stack Todo CRUD (Create, Read, Update, Delete) applicatio
 
 ## Deployed Sample
 
-[AWS Deployed Sample](https://ec2-3-234-239-223.compute-1.amazonaws.com/)
+[AWS Deployed Sample](ec2-3-238-175-187.compute-1.amazonaws.com/)
 
 ## Getting Started
 
