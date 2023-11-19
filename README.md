@@ -18,10 +18,6 @@ This project is a full-stack Todo CRUD (Create, Read, Update, Delete) applicatio
 - [Contributing](https://chat.openai.com/c/1b4e7736-933f-4e4d-a05f-2b18f07c842e#contributing)
 - [License](https://chat.openai.com/c/1b4e7736-933f-4e4d-a05f-2b18f07c842e#license)
 
-## Deployed Sample
-
-[AWS Deployed Sample](ec2-3-238-175-187.compute-1.amazonaws.com/)
-
 ## Getting Started
 
 ### Prerequisites
