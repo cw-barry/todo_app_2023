@@ -7,8 +7,7 @@ services:
       - '80:80'
     depends_on:
       - backend
-    environment:
-      - REACT_APP_BACKEND=${REACT_APP_BACKEND}
+
   backend:
     build:
       context: ./backend
@@ -16,6 +15,7 @@ services:
       - '5000:5000'
     depends_on:
       - mongodb
+
   mongodb:
     image: 'mongo:latest'
     ports:
