@@ -15,7 +15,8 @@ require('./config/db')();
 
 // Middlewares
 // CORS Middleware:
-app.use(require('cors')());
+const cors = require('cors');
+app.use(cors());
 
 // Accept/parse JSON requests
 app.use(express.json());
