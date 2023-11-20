@@ -2,6 +2,9 @@
 
 This project is a full-stack Todo CRUD (Create, Read, Update, Delete) application built using React.js for the frontend, Node.js with Express for the backend, and MongoDB as the database. Additionally, it includes Dockerization using Docker and Docker Compose.
 
+## Deployed Version
+The project has been deployed to AWS and is now live with Docker images. You can access the project through this [link](http://ec2-54-165-167-60.compute-1.amazonaws.com/)
+
 ## Table of Contents
 
 - Getting Started
