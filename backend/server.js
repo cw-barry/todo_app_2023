@@ -14,12 +14,11 @@ require('express-async-errors');
 require('./config/db')();
 
 // Middlewares
+// CORS Middleware:
+app.use(require('cors')());
+
 // Accept/parse JSON requests
 app.use(express.json());
-
-// CORS Middleware:
-
-app.use(require('cors')());
 
 // Logger middleware
 app.use(require('./middlewares/logger'));
