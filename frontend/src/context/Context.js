@@ -5,12 +5,19 @@ import axios from 'axios';
 export const Context = createContext();
 
 const ENV = process.env.REACT_APP_ENV;
-const BACKEND =
-  ENV === 'AWS'
-    ? 'http://backend:5000'
-    : process.env.REACT_APP_BACKEND || 'http://127.0.0.1:5000';
+const PORT = process.env.REACT_APP_BACKEND_PORT;
+// const BACKEND =
+//   ENV === 'AWS'
+//     ? 'http://backend:5000'
+//     : process.env.REACT_APP_BACKEND || 'http://127.0.0.1:5000';
 
-const baseUrl = `${BACKEND}/api/`;
+// const baseUrl = `${BACKEND}/api/`;
+
+const baseUrl =
+  ENV === 'AWS'
+    ? `/${PORT}/api/`
+    : `${process.env.REACT_APP_BACKEND}/api/` || 'http://127.0.0.1:/api/';
+
 console.log(baseUrl);
 
 const ContextProvider = ({ children }) => {
