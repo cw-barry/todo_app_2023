@@ -15,7 +15,7 @@ const PORT = process.env.REACT_APP_BACKEND_PORT;
 
 const baseUrl =
   ENV === 'AWS'
-    ? `/${PORT}/api/`
+    ? `:${PORT}/api/`
     : `${process.env.REACT_APP_BACKEND}/api/` || 'http://127.0.0.1:/api/';
 
 console.log(baseUrl);
