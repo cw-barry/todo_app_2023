@@ -6,6 +6,8 @@ const app = express();
 
 // Configuration
 require('dotenv').config({ path: './config/.env' });
+console.log('PORT:', process.env.PORT);
+console.log('HOST:', process.env.HOST);
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '127.0.0.1';
 // asyncErrors to errorHandler
