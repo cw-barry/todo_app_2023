@@ -1,6 +1,7 @@
 # Frontend Dockerfile
 FROM node:14 as build
 WORKDIR /app
+ENV BACKEND_PORT=5000
 COPY package*.json ./
 RUN npm install
 COPY . .
