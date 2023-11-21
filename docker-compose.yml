@@ -16,7 +16,7 @@ services:
     depends_on:
       - mongodb
     environment:
-      - BACKEND_PORT=${BACKEND_PORT}
+      - PORT=${PORT}
 
   mongodb:
     image: 'mongo:latest'
