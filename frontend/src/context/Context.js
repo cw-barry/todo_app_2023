@@ -30,6 +30,7 @@ const ContextProvider = ({ children }) => {
 
   const registerUser = async (userData, navigate) => {
     console.log(userData);
+    console.log(baseUrl);
     try {
       const res = await axios({
         method: 'post',
