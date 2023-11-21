@@ -7,6 +7,8 @@ services:
       - '80:80'
     depends_on:
       - backend
+    environment:
+      - BACKEND_PORT=${BACKEND_PORT}
 
   backend:
     build:
@@ -15,8 +17,6 @@ services:
       - '5000:5000'
     depends_on:
       - mongodb
-    environment:
-      - PORT=${PORT}
 
   mongodb:
     image: 'mongo:latest'
